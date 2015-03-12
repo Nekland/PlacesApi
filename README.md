@@ -27,6 +27,7 @@ $api->useAuthentication('PublicApiAccess', ['key' => 'MY KEY']);
 $result = $api->getSearchApi()->search('49.8445057,3.2912589', 1000);
 ```
 
+> See authentication part to know how to get a key
 
 Who needs a documentation ? NeklandPlacesApi supports provide auto-completion for compatibles IDEs.
 
