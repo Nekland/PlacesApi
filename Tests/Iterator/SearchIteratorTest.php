@@ -38,21 +38,6 @@ class SearchIteratorTest extends \PHPUnit_Framework_TestCase
             return true;
         }))->will([$this, 'fakeHttpSend']);
 
-        /*
-                $this->httpClient->send(Argument::that(function ($arg) {
-                    if (!$arg instanceof Request) {
-                        return false;
-                    }
-                    $body = $arg->getBody();
-
-                    if (!empty($body['pagetoken'])) {
-                        return false;
-                    }
-
-                    return true;
-                }))->willReturn($this->getLastPageJson())->shouldBeCalledTimes(1);
-
-        */
         $this->searchApi = new Search($this->httpClient->reveal());
     }
 
