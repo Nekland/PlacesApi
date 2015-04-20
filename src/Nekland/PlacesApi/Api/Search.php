@@ -12,6 +12,7 @@
 namespace Nekland\PlacesApi\Api;
 
 use Nekland\BaseApi\Api\AbstractApi;
+use Nekland\PlacesApi\Iterator\SearchIterator;
 
 /**
  * Class Search
@@ -22,7 +23,7 @@ use Nekland\BaseApi\Api\AbstractApi;
 class Search extends AbstractApi
 {
     /**
-     * @param string $location Format latitude,longitude
+     * @param string $location Format: latitude,longitude
      * @param string $radius   Meters for search from the location point (max 50 000 meters)
      * @param array  $other    More parameters, see google documentation
      * @return array
@@ -34,7 +35,34 @@ class Search extends AbstractApi
             $other
         );
 
+        return $this->searchWithBody($body);
+    }
+
+    /**
+     * All required information should be in an array
+     *
+     * @param array $body
+     * @return array
+     */
+    public function searchWithBody(array $body)
+    {
         return $this->get('nearbysearch/json', $body);
+    }
+
+    /**
+     * @param string $location Format: latitude,longitude
+     * @param string $radius   Meters for search from the location point (max 50 000 meters)
+     * @param array  $other    More parameters, see google documentation
+     * @return SearchIterator
+     */
+    public function getSearchIterator($location, $radius, array $other = [])
+    {
+        $body = array_merge(
+            ['location' => $location, 'radius' => $radius],
+            $other
+        );
+
+        return new SearchIterator($this, $body);
     }
 
     /**
