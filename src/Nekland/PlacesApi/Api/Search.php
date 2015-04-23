@@ -28,7 +28,7 @@ class Search extends AbstractApi
      * @param array  $other    More parameters, see google documentation
      * @return array
      */
-    public function search($location, $radius, array $other = [])
+    public function searchLocation($location, $radius, array $other = [])
     {
         $body = array_merge(
             ['location' => $location, 'radius' => $radius],

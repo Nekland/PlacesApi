@@ -20,7 +20,7 @@ Available methods
 ```php
 <?php
 
-array Search::search($location, $radius [, array $other = []])
+array Search::searchLocation($location, $radius [, array $other = []])
 ```
 
 * `location`: a location (latitude,longitude), i.e. `48.8588589,2.3470599,13`
