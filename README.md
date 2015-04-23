@@ -2,6 +2,7 @@ Places API
 ==========
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Nekland/PlacesApi/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Nekland/PlacesApi/?branch=master)
+[![Build Status](https://travis-ci.org/Nekland/PlacesApi.svg?branch=master)](https://travis-ci.org/Nekland/PlacesApi)
 
 This library helps you to ask for Google Places API.
 
