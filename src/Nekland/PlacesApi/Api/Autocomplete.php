@@ -35,15 +35,12 @@ class Autocomplete extends AbstractApi
 
             case 'OVER_QUERY_LIMIT':
                 throw new QuotaLimitException();
-                break;
 
             case 'REQUEST_DENIED':
                 throw new AuthenticationException();
-                break;
 
             case 'INVALID_REQUEST':
                 throw new \InvalidArgumentException('The input is not correct for autocomplete.');
-                break;
 
             default:
                 throw new \RuntimeException('This case is not supported, please report these to NeklandPlacesApi.');
