@@ -1,6 +1,8 @@
 Places API
 ==========
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Nekland/PlacesApi/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Nekland/PlacesApi/?branch=master)
+
 This library helps you to ask for Google Places API.
 
 Installation
