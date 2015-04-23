@@ -20,7 +20,7 @@ class Autocomplete extends AbstractApi
 {
     const URL = 'autocomplete/json';
 
-    public function autocomplete($input, array $other = [])
+    public function complete($input, array $other = [])
     {
         $body = array_merge(['input' => $input], $other);
 

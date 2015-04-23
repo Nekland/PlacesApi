@@ -20,7 +20,7 @@ Available methods
 ```php
 <?php
 
-array Autocomplete::autocomplete($input [, array $other = []])
+array Autocomplete::complete($input [, array $other = []])
 ```
 
 * `input`: the input of your user
