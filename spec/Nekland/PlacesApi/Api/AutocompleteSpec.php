@@ -11,6 +11,7 @@ class AutocompleteSpec extends ObjectBehavior
     function it_is_initializable()
     {
         $this->shouldHaveType('Nekland\PlacesApi\Api\Autocomplete');
+        $this->shouldHaveType('Nekland\BaseApi\Api\AbstractApi');
     }
 
     function let(AbstractHttpClient $client)
