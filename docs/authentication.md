@@ -19,7 +19,7 @@ To make this authentication work, you just have to generate an APIKEY from the g
 <?php
 
 $api = new Places();
-$api->authentication([
+$api->useAuthentication([
     'PublicApiAccess',
     ['key' => 'MY_PLACES_APIKEY']
 ]);
