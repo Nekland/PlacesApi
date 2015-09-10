@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project name="ScoringLine" default="build">
-    <target name="build" depends="prepare,vendors,phpspec" />
+    <target name="build" depends="vendors,phpspec" />
     <target name="vendors" description="install vendors">
         <exec executable="composer" failonerror="true">
             <arg value="install" />
