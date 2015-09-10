@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="ScoringLine" default="build">
+    <target name="build" depends="prepare,vendors,phpspec" />
+    <target name="vendors" description="install vendors">
+        <exec executable="composer" failonerror="true">
+            <arg value="install" />
+        </exec>
+    </target>
+    <target name="phpspec" description="Launch phpspec tests">
+        <exec executable="./vendor/bin/phpspec" failonerror="true">
+            <arg value="run" />
+            <arg value="--format=pretty" />
+        </exec>
+    </target>
+</project>
