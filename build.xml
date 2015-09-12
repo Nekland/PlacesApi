@@ -1,16 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project name="ScoringLine" default="build">
-    <target name="build" depends="vendors,phpspec" />
+    <target name="build" depends="if_windows,if_unix,vendors,phpspec" />
     <target name="vendors" description="install vendors">
-        <exec executable="composer" failonerror="true">
+        <exec executable="${composer.exec}" failonerror="true">
             <arg value="install" />
         </exec>
     </target>
     <target name="phpspec" description="Launch phpspec tests">
-        <exec executable="./vendor/bin/phpspec" failonerror="true">
+        <exec executable="${phpspec.exec}" failonerror="true">
             <arg value="run" />
             <arg value="--format=pretty" />
         </exec>
+    </target>
+
+    <target name="checkos">
+        <condition property="isWindows">
+            <os family="windows" />
+        </condition>
+
+        <condition property="isLinux">
+            <os family="unix" />
+        </condition>
+    </target>
+
+    <target name="if_windows" depends="checkos" if="isWindows">
+       <property name="composer.exec" value="composer.bat" />
+        <property name="phpspec.exec" value=".\vendor\bin\phpspec.bat" />
+    </target>
+
+    <target name="if_unix" depends="checkos" if="isLinux">
+        <property name="composer.exec" value="composer" />
+        <property name="phpspec.exec" value="./vendor/bin/phpspec" />
     </target>
 </project>
