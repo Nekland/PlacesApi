@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="ScoringLine" default="build">
+<project name="PlacesApi" default="build">
     <target name="build" depends="if_windows,if_unix,vendors,phpspec" />
     <target name="vendors" description="install vendors">
         <exec executable="${composer.exec}" failonerror="true">
