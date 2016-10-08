@@ -23,6 +23,7 @@ use Symfony\Component\EventDispatcher\EventDispatcher;
  * @method \Nekland\PlacesApi\Api\Search getSearchApi()
  * @method \Nekland\PlacesApi\Api\Autocomplete getAutocompleteApi()
  * @method \Nekland\PlacesApi\Api\Places getPlacesApi()
+ * @method \Nekland\PlacesApi\Api\Photos getPhotosApi()
  */
 class Places extends ApiFactory
 {
